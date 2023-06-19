@@ -1,25 +1,19 @@
-import logo from './logo.svg';
+import React from 'react';
+import { Route } from 'react-router-dom';
+import AdminPanel from './components/AdminPanel';
+import ManagerPanel from './components/ManagerPanel';
+import DeveloperPanel from './components/DeveloperPanel';
 import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Route exact path="/" component={AdminPanel} />
+      <Route path="/manager" component={ManagerPanel} />
+      <Route path="/developer" component={DeveloperPanel} />
+
     </div>
   );
-}
+};
 
 export default App;
